@@ -192,6 +192,12 @@ The following practical files were produced during this week's activities:
 
 ---
 
+## Wireshark Packet Capture
+
+I captured the ICMP ping traffic between Node1 and Node3 on Node2 using tcpdump. The capture was saved as `ping.pcap` and then opened in Wireshark to verify the ICMP Echo Request and Echo Reply packets.
+
+📁 [Download/View ping.pcap](images/ping.pcap)
+
 ## Reflection
 
 This week's practical activities helped me understand how communication can be tested and observed within a virtual network. I used Linux networking tools to identify IP addresses and verify connectivity between different nodes. Netcat demonstrated how TCP can be used to exchange data between hosts, while FileZilla allowed me to transfer files between the Linux virtual machine and my Windows computer.
