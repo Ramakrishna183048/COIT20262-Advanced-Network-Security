@@ -40,7 +40,7 @@ This address was later used as the destination for connectivity testing from Nod
 
 ### Screenshot
 
-![Node3 IP Address](images/week1-node3-ip.png)
+![Node3 IP Address](images/week1-task3.1-ipaddress-node3.png)
 
 ---
 
