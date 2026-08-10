@@ -78,7 +78,7 @@ echo "Hello from Node1" | nc 192.168.2.21 5000
 
 The message was successfully received on Node3, confirming TCP communication between the nodes.
 
-### Evidence
+### Screenshot
 
 ![Netcat Test](images/week1-netcat.png)
 
@@ -102,7 +102,7 @@ This is an example text file created using nano
 
 I saved the file and verified that it existed on Node2.
 
-### Evidence
+### Screenshot
 
 ![Nano Text File](images/week1-nano-example.png)
 
@@ -114,7 +114,7 @@ I connected to Node2 using FileZilla and accessed the `/home/network` directory.
 
 The `example.txt` file was transferred successfully from the Linux virtual machine to my Windows host computer.
 
-### Evidence
+### Screenshot
 
 ![FileZilla Transfer](images/week1-filezilla.png)
 
@@ -150,7 +150,7 @@ The resulting packet capture was saved as:
 ping.pcap
 ```
 
-### Evidence
+### Screenshot
 
 ![TCPDump Capture](images/week1-tcpdump.png)
 
