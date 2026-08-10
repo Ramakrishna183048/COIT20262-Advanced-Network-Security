@@ -179,7 +179,7 @@ This confirmed that Node1 successfully communicated with Node3 and that the traf
 
 ### Screenshot
 
-![Wireshark ICMP Analysis](images/week1-wireshark.png)
+![Wireshark ICMP Analysis](images/week1-task4-pcap-wireshak.png)
 
 ---
 
