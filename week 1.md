@@ -54,9 +54,9 @@ ping 192.168.2.21
 
 Node3 successfully responded to the ICMP Echo Requests. The test showed successful communication between the two nodes with no packet loss.
 
-### Evidence
+### Screenshot
 
-![Ping Test](images/week1-ping.png)
+![Ping Test](images/week1-task3.2-pingnode1-node3.png)
 
 ---
 
