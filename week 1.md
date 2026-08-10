@@ -80,7 +80,7 @@ The message was successfully received on Node3, confirming TCP communication bet
 
 ### Screenshot
 
-![Netcat Test](images/week1-netcat.png)
+![Netcat Test](images/week2-task3-message.png)
 
 ---
 
