@@ -105,6 +105,7 @@ I saved the file and verified that it existed on Node2.
 ### Screenshot
 
 ![Nano Text File](images/week1-task3-file.png)
+![Nano Text File]()
 
 ---
 
@@ -116,7 +117,7 @@ The `example.txt` file was transferred successfully from the Linux virtual machi
 
 ### Screenshot
 
-![FileZilla Transfer](images/week1-filezilla.png)
+![FileZilla Transfer](images/week1-task3-filezilla.png)
 
 ---
 
