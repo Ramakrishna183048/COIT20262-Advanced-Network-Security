@@ -105,7 +105,7 @@ I saved the file and verified that it existed on Node2.
 ### Screenshot
 
 ![Nano Text File](images/week1-task3-file.png)
-![Nano Text File]()
+![Nano Text File](images/week1-task3-textfile.png)
 
 ---
 
