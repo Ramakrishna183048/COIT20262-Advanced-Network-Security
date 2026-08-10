@@ -153,7 +153,7 @@ ping.pcap
 
 ### Screenshot
 
-![TCPDump Capture](images/week1-tcpdump.png)
+![TCPDump Capture](images/week1-task4-pcapfilenode2.png)
 
 ---
 
