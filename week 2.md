@@ -1,4 +1,136 @@
-# week 1
+# Week 2 – Network Attacks
+
+## Task 1 – Capture Web Browsing
+
+### Objective
+
+The objective of this task was to capture and analyse HTTP web traffic using `tcpdump` and Wireshark. The MyUni demonstration website was used to observe HTTP requests and responses and to identify information transmitted through unencrypted HTTP.
+
+### MyUni Website Setup
+
+The MyUni demonstration website was hosted on Node3. The virtual network was configured with:
+
+- **Node1** – Client
+- **Node2** – Router and packet capture
+- **Node3** – MyUni web server
+
+The MyUni website was accessed from Node1 using:
+
+```bash
+lynx http://www.myuni.edu/grades/
+```
+
+### Capturing HTTP Traffic
+
+On Node2, `tcpdump` was used to capture the traffic generated while accessing the MyUni website.
+
+### Accessing the MyUni Website
+
+The MyUni web application was accessed from Node1 using Lynx. The student ID was entered into the View Grades page to generate HTTP traffic for packet capture and analysis.
+
+![MyUni View Grades Page](images/week2-task1-myunipage.png)
+
+### HTTP Packet Analysis
+
+The captured traffic showed HTTP communication between:
+
+- **Client IP:** `192.168.1.11`
+- **Web Server IP:** `192.168.2.21`
+- **Protocol:** HTTP
+- **Server Port:** TCP `80`
+
+The captured packets included HTTP requests and responses such as:
+
+```text
+GET /grades/query.php HTTP/1.0
+POST /grades/view.php HTTP/1.0
+HTTP/1.1 200 OK
+```
+
+The HTTP response packets were inspected in Wireshark to understand the communication between the client and the MyUni web server.
+
+![HTTP Response Packet 16](images/week2-task1-Response-Packet16.png)
+
+![HTTP Response Packet 26](images/week2-task1-Response-Packet26.png)
+
+![HTTP Response Packet 28](images/week2-task1-Response-Packet28.png)
+
+### Capturing Login Credentials
+
+To examine the security of the HTTP login process, another packet capture was performed while submitting test login credentials through the MyUni login page.
+
+The capture was saved as:
+
+```text
+login.pcap
+```
+
+The following Wireshark display filter was used to locate the HTTP POST request:
+
+```text
+http.request.method == "POST"
+```
+
+Wireshark identified **Packet 58**, containing:
+
+```text
+POST /grades/login.php HTTP/1.0
+```
+
+The packet was sent from `192.168.1.11` to the MyUni web server at `192.168.2.21` using TCP port `80`.
+
+After expanding **HTML Form URL Encoded: application/x-www-form-urlencoded**, the submitted test credentials were visible:
+
+```text
+user_name = s1234567
+password = password123
+submit = Login
+```
+
+![HTTP Login Credentials](images/week2-task1-login-credentials.png)
+
+### Message Sequence
+
+The HTTP communication observed in Wireshark followed a request-response sequence:
+
+
+pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
+
+
+
+
+
+### Packet Format
+
+The captured web traffic contained the following protocol layers:
+
+```text
+Ethernet II
+     |
+     v
+Internet Protocol Version 4 (IPv4)
+     |
+     v
+Transmission Control Protocol (TCP)
+     |
+     v
+Hypertext Transfer Protocol (HTTP)
+     |
+     v
+HTTP Form Data
+```
+
+Wireshark allowed each protocol layer and its corresponding header information to be inspected.
+
+### Security Observation
+
+The experiment demonstrated that information submitted through an unencrypted HTTP connection can be inspected in captured network traffic. In the login capture, the test username and password were visible directly in the HTTP POST form data.
+
+This demonstrates why authentication and other sensitive web communication should use HTTPS rather than HTTP.
+
+### Conclusion
+
+This task provided practical experience using `tcpdump` and Wireshark to capture and analyse web traffic. HTTP GET and POST requests and server responses were identified in the packet capture. The experiment also demonstrated that test login credentials transmitted using unencrypted HTTP could be observed in plaintext, highlighting the importance of using encrypted HTTPS connections for sensitive web communication.
 
 ## Task 2 – TCP SYN Flood DoS Attack
 
