@@ -172,7 +172,7 @@ A second SYN flood test containing additional packet data was then performed fro
 
 
 After the test, the HTTP service was checked again. In my experiment, the service remained in the `LISTEN` state.
-
+![Monitoring the HTTP service on Metasploitable 2 before the SYN flood test](images/task2(4).png)
 ![Metasploitable Result](images/Week2_Task2_ms2_After_SYN_Flood.png)
 
 ### Conclusion
