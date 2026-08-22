@@ -95,7 +95,6 @@ password = password123
 submit = Login
 ```
 
-![HTTP Login Credentials](images/week2-task1-login-credentials.png)
 ![Test login credentials visible in the captured HTTP POST request](images/week2-task1-loginpcap.png)
 
 ### Message Sequence
