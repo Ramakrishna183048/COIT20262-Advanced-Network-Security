@@ -23,16 +23,14 @@ This repository contains my weekly tutorial and laboratory activities completed 
 
 | Week | Topic | Status |
 |------|-------|--------|
-| Week 1 | Introduction to Network Security | ✅ Completed |
-| Week 2 | Coming Soon |  |
-| Week 3 | Coming Soon |  |
-| Week 4 | Coming Soon |  |
-| Week 5 | Coming Soon |  |
-| Week 6 | Coming Soon |  |
-| Week 7 | Coming Soon |  |
-| Week 8 | Coming Soon |  |
-| Week 9 | Coming Soon |  |
-| Week 10 | Coming Soon |  |
+| [Week 1](./week%201.md) | Introduction to Network Security | ✅ Completed |
+| [Week 2](./week%202.md) | Network Attacks | ✅ Completed |
+| Week 3 | Coming Soon | |
+| Week 4 | Coming Soon | |
+| Week 5 | Coming Soon | |
+| Week 6 | Coming Soon | |
+| Week 7 | Coming Soon | |
+| Week 8 | Coming Soon | |
 
 ---
 
