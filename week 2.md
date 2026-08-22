@@ -99,11 +99,32 @@ submit = Login
 
 ### Message Sequence
 
-The HTTP communication observed in Wireshark followed a request-response sequence:
+The HTTP communication observed in Wireshark followed the request-response sequence below:
 
-
-pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
-
+```text
+Node1 - Client (192.168.1.11)                  Node3 - MyUni Server (192.168.2.21)
+        |                                                   |
+        |  GET /grades/query.php HTTP/1.0                  |
+        |-------------------------------------------------->|
+        |                                                   |
+        |                 HTTP/1.1 200 OK                   |
+        |<--------------------------------------------------|
+        |                                                   |
+        |  POST /grades/view.php HTTP/1.0                  |
+        |  id=s1234567                                      |
+        |-------------------------------------------------->|
+        |                                                   |
+        |                 HTTP/1.1 200 OK                   |
+        |<--------------------------------------------------|
+        |                                                   |
+        |  POST /grades/login.php HTTP/1.0                 |
+        |  user_name=s1234567                               |
+        |  password=password123                             |
+        |-------------------------------------------------->|
+        |                                                   |
+        |                 HTTP/1.1 200 OK                   |
+        |<--------------------------------------------------|
+        |                                                   |
 
 
 
