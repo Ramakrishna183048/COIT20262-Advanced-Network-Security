@@ -29,6 +29,7 @@ On Node2, `tcpdump` was used to capture the traffic generated while accessing th
 The MyUni web application was accessed from Node1 using Lynx. The student ID was entered into the View Grades page to generate HTTP traffic for packet capture and analysis.
 
 ![MyUni View Grades Page](images/week2-task1-myunipage.png)
+![Verification of the MyUni web server files on Node3](images/week2-task1-node3-apache2(1).png)
 
 On Node2, `tcpdump` was used on the `eth1` interface to capture the network traffic generated while accessing the MyUni web application. The captured packets were saved in the `week2.pcap` file.
 
