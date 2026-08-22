@@ -19,7 +19,7 @@ The MyUni website was accessed from Node1 using:
 ```bash
 lynx http://www.myuni.edu/grades/
 ```
-
+![Verification of the MyUni web server files on Node3](images/week2-task1-node3-apache2(1).png)
 ### Capturing HTTP Traffic
 
 On Node2, `tcpdump` was used to capture the traffic generated while accessing the MyUni website.
@@ -28,12 +28,13 @@ On Node2, `tcpdump` was used to capture the traffic generated while accessing th
 
 The MyUni web application was accessed from Node1 using Lynx. The student ID was entered into the View Grades page to generate HTTP traffic for packet capture and analysis.
 
+![Accessing the MyUni grades website from Node1 using HTTP](images/week2-task1-http-link(3).png)
 ![MyUni View Grades Page](images/week2-task1-myunipage.png)
-![Verification of the MyUni web server files on Node3](images/week2-task1-node3-apache2(1).png)
 
 On Node2, `tcpdump` was used on the `eth1` interface to capture the network traffic generated while accessing the MyUni web application. The captured packets were saved in the `week2.pcap` file.
 
 ![HTTP Traffic Capture using tcpdump](images/week2-task1-tcpdump.png)
+![Transfer of the captured packet file from Node2 using FileZilla](images/week2-task1-pcapfilezila(1).png)
 
 ### HTTP Packet Analysis
 
@@ -43,6 +44,8 @@ The captured traffic showed HTTP communication between:
 - **Web Server IP:** `192.168.2.21`
 - **Protocol:** HTTP
 - **Server Port:** TCP `80`
+
+![HTTP packet capture opened and analysed in Wireshark](images/week2-task1-pcapfilewireshak(3).png)
 
 The captured packets included HTTP requests and responses such as:
 
@@ -93,6 +96,7 @@ submit = Login
 ```
 
 ![HTTP Login Credentials](images/week2-task1-login-credentials.png)
+![Test login credentials visible in the captured HTTP POST request](images/week2-task1-loginpcap(1).png)
 
 ### Message Sequence
 
@@ -147,6 +151,8 @@ The objective of this task was to demonstrate and observe a TCP SYN flood attack
 - Metasploitable 2: `172.16.1.35`
 - Target service: HTTP (TCP port 80)
 - Network: VirtualBox Internal Network
+
+![Kali Linux network adapter configuration](images/week2-task2-kali-adaptor(2).png)
 
 ### Network Connectivity
 Kali Linux and Metasploitable 2 were configured on the same internal network. Connectivity between the two virtual machines was verified successfully before conducting the experiment.
