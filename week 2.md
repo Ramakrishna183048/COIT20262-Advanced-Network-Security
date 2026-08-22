@@ -163,7 +163,7 @@ A TCP SYN flood was generated from Kali Linux towards the HTTP service running o
 
 The packet capture showed a large number of TCP SYN packets (`Flags [S]`) directed towards the HTTP service. The test was stopped after the required short period using `Ctrl+C`.
 
-![TCP SYN Flood](images/week2_Task2_SYN_Flood_TCPdump.png)
+![TCP SYN Flood](images/week2-Task2-SYN-Flood-TCPdump.png)
 
 ### Observing the Effect on Metasploitable 2
 The web service on Metasploitable 2 was monitored using the `ss` command. Before the second test, the HTTP service was shown in the `LISTEN` state.
