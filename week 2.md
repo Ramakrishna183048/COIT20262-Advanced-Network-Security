@@ -196,5 +196,10 @@ After the test, the HTTP service was checked again. In my experiment, the servic
 ![Monitoring the HTTP service on Metasploitable 2 before the SYN flood test](images/task2.png)
 ![Metasploitable Result](images/Week2_Task2_ms2_After_SYN_Flood.png)
 
+### Packet Capture File
+
+**week2.pcap** – Packet capture of the MyUni HTTP web browsing traffic used for analysis in Wireshark.
+[Download/View Week 2 Packet Capture](images/week2.pcap)
+
 ### Conclusion
 This task demonstrated how a TCP SYN flood can generate a very large number of SYN packets towards a network service within a short period. Using `tcpdump` made it possible to observe the SYN traffic, while `ss` was used to monitor the HTTP service on the target machine. The experiment was performed only within the controlled VirtualBox lab environment.
