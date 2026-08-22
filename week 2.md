@@ -156,7 +156,7 @@ The objective of this task was to demonstrate and observe a TCP SYN flood attack
 ### Network Connectivity
 Kali Linux and Metasploitable 2 were configured on the same internal network. Connectivity between the two virtual machines was verified successfully before conducting the experiment.
 
-![Network Connectivity](images/Week2_Task2_Connectivity.png)
+![Network Connectivity](images/week2-task2-kaliip.png)
 
 ### TCP SYN Flood and Packet Detection
 A TCP SYN flood was generated from Kali Linux towards the HTTP service running on Metasploitable 2. During the experiment, `tcpdump` was used on Kali to monitor the traffic on the lab network interface.
@@ -170,7 +170,6 @@ The web service on Metasploitable 2 was monitored using the `ss` command. Before
 
 A second SYN flood test containing additional packet data was then performed from Kali Linux.
 
-![SYN Flood Test](images/Week2_Task2_SYN_Flood_Effect.png)
 
 After the test, the HTTP service was checked again. In my experiment, the service remained in the `LISTEN` state.
 
