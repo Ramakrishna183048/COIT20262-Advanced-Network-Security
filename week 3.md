@@ -49,18 +49,34 @@ The application returned multiple user records instead of a single record. This 
 ## Task 3 – OWASP Top 10
 
 ### Objective
-The objective of this task was to become familiar with the current OWASP Top 10 web application security risks and understand common attack scenarios.
+The objective of this task was to review the current OWASP Top 10 web application security risks and, in particular, study the **Example Attack Scenarios for the top three risks**.
 
-### Procedure
-I visited the OWASP website and reviewed the **OWASP Top 10:2025**.
+### OWASP Top 10:2025
 
-In particular, I reviewed the top three risks and their example attack scenarios:
+1. [A01:2025 - Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
+2. [A02:2025 - Security Misconfiguration](https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/)
+3. [A03:2025 - Software Supply Chain Failures](https://owasp.org/Top10/2025/A03_2025-Software_Supply_Chain_Failures/)
+4. [A04:2025 - Cryptographic Failures](https://owasp.org/Top10/2025/A04_2025-Cryptographic_Failures/)
+5. [A05:2025 - Injection](https://owasp.org/Top10/2025/A05_2025-Injection/)
+6. [A06:2025 - Insecure Design](https://owasp.org/Top10/2025/A06_2025-Insecure_Design/)
+7. [A07:2025 - Authentication Failures](https://owasp.org/Top10/2025/A07_2025-Authentication_Failures/)
+8. [A08:2025 - Software or Data Integrity Failures](https://owasp.org/Top10/2025/A08_2025-Software_or_Data_Integrity_Failures/)
+9. [A09:2025 - Security Logging and Alerting Failures](https://owasp.org/Top10/2025/A09_2025-Security_Logging_and_Alerting_Failures/)
+10. [A10:2025 - Mishandling of Exceptional Conditions](https://owasp.org/Top10/2025/A10_2025-Mishandling_of_Exceptional_Conditions/)
 
-1. **A01:2025 – Broken Access Control**
-2. **A02:2025 – Security Misconfiguration**
-3. **A03:2025 – Software Supply Chain Failures**
+### Top Three Risks Reviewed
 
-![OWASP Top 10](images/Week3-Task3-OWASP-Top10.png)
+#### 1. A01:2025 – Broken Access Control
+I reviewed the example attack scenarios for Broken Access Control. This risk occurs when access restrictions are not correctly enforced, which may allow a user to access resources or perform actions that they should not be authorised to access.
+
+#### 2. A02:2025 – Security Misconfiguration
+I reviewed the example attack scenarios for Security Misconfiguration. This risk can occur when applications, servers, frameworks, or security settings are incorrectly configured, potentially exposing sensitive functionality or information to attackers.
+
+#### 3. A03:2025 – Software Supply Chain Failures
+I reviewed the example attack scenarios for Software Supply Chain Failures. This risk relates to weaknesses in software dependencies, build processes, distribution systems, or third-party components that can affect the security of an application.
+
+### Result
+I reviewed the OWASP Top 10:2025 and studied the example attack scenarios for the top three risks: Broken Access Control, Security Misconfiguration, and Software Supply Chain Failures. This helped me understand how these security weaknesses may affect web applications.
 
 
 ## Week 3 Summary
