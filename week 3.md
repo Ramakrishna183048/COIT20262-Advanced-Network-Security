@@ -100,3 +100,28 @@ I reviewed the OWASP Top 10:2025 and studied the example attack scenarios for th
 ## Week 3 Summary
 
 During Week 3, I gained practical experience in vulnerability assessment and web application security. I used Greenbone/OpenVAS to scan MS2 and analyse detected vulnerabilities, demonstrated SQL injection using DVWA, and reviewed the OWASP Top 10 web application security risks.
+
+## Problems Faced and Solutions
+
+During the Greenbone/OpenVAS practical, I faced several issues while setting up and accessing the vulnerability scanner.
+
+### Greenbone Network Configuration Issue
+Initially, the Greenbone virtual machine was not communicating correctly with the MS2 virtual machine. I checked the VirtualBox network adapters and configured the machines so that Greenbone could communicate with MS2 on the `192.168.56.0/24` network.
+
+I verified the Greenbone network interfaces and confirmed that it had an interface with the IP address `192.168.56.20`.
+
+### Greenbone Web Interface Connection Issue
+While setting up Greenbone, the web interface did not initially load correctly and at times displayed a blank page or connection problem. I checked the Greenbone VM network configuration and restarted the appliance/services. After the configuration was corrected, I was able to access the Greenbone web interface successfully.
+
+### Greenbone Manager Service Issue
+I also encountered an issue where the Greenbone Vulnerability Manager service was not responding and the web interface could not communicate with the manager daemon. After checking the appliance configuration and restarting/reconfiguring the Greenbone VM, the services started successfully and the dashboard became accessible.
+
+### MS2 Connectivity
+Before performing the vulnerability scan, I verified that the Greenbone VM could communicate with the MS2 target at:
+
+`192.168.56.35`
+
+After resolving the network and Greenbone service issues, I successfully created the MS2 target, configured the **MS2 Scan**, and completed the vulnerability scan.
+
+### Outcome
+Troubleshooting these problems helped me understand the importance of correct virtual network configuration, IP addressing, connectivity testing, and ensuring that vulnerability scanner services are running correctly before starting a security scan.
