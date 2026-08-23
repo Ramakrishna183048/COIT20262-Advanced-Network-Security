@@ -37,11 +37,10 @@ I understood how public and private keys are used for confidentiality and how di
 
 The objective of this task was to use OpenSSL to generate and examine a 2048-bit RSA public/private key pair, share the public key, create a digital signature using RSA and SHA-256, and verify a message and signature received from another student.
 
+----
+
 ## Task 2 – Public Key Cryptography with RSA
-
-### Objective
-
-The objective of this task was to use OpenSSL to generate and examine a 2048-bit RSA key pair, identify important RSA parameters, share the public key, and use RSA with SHA-256 for digital signatures and signature verification.
+----
 
 ### RSA 2048-bit Key Pair Generation
 
