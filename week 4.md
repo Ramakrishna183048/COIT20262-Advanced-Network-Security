@@ -24,10 +24,10 @@ OpenSSL was successfully accessed on the Debian Linux VM, and the available cryp
 ## Task 2 – Symmetric Key Encryption with AES
 
 ### Objective
-The objective of this task was to generate a random secret key and IV, create a plaintext message, encrypt the message using AES-256-CBC, exchange the required files with another student, and decrypt the received ciphertext.
+The objective of this task was to generate a random secret key and IV, encrypt a plaintext message using AES-256-CBC, exchange the required information with another student, and decrypt the received ciphertext.
 
-### Generating the AES Key and IV
-I generated a random 256-bit AES secret key and a 128-bit IV using OpenSSL. These values were used for AES-256-CBC encryption.
+### AES Key and IV Generation
+I generated a random AES-256 secret key and a 16-byte IV using OpenSSL. These values were used for AES-256-CBC encryption and decryption.
 
 ![AES Key](images/week4-tasks-keys.png)
 
@@ -35,53 +35,54 @@ I generated a random 256-bit AES secret key and a 128-bit IV using OpenSSL. Thes
 
 ![AES IV](images/week4-task1.3-iv.png)
 
-*Figure 3: Generating the random IV for AES-256-CBC encryption.*
+*Figure 3: Generating the random IV for AES-256-CBC.*
 
-### Creating and Encrypting the Message
-I created a plaintext file named `message-12314173.txt` containing my message. I then encrypted the plaintext using AES-256-CBC with the generated key and IV.
+### Message and Encryption
+I created my plaintext message file and encrypted it using AES-256-CBC with the generated key and IV. My student ID was used in the filenames.
 
-The encrypted output was saved as:
+The files created were:
 
-`message-12314173.enc`
+- `message-12314173.txt` – plaintext message
+- `message-12314173.enc` – encrypted ciphertext
+- `aes256.key` – AES secret key
+- `aes256.iv` – initialization vector
 
-![AES Encryption](images/week4-task2-aes-encryption.png)
+![AES Files](images/week4-task2-files.png)
 
-*Figure 4: Encrypting my plaintext message using AES-256-CBC with the generated key and IV.*
+*Figure 4: AES key, IV, plaintext message and encrypted ciphertext files created for the AES-256-CBC practical.*
 
-### Key, IV and Ciphertext Exchange
-For this practical, I worked with another student (Student ID: 12307888). The AES key and IV were shared as required for the practical, and encrypted ciphertext files were exchanged.
+### Partner Exchange
+I completed the encryption/decryption exercise with Student ID 12307888. The key and IV required for the exercise were shared, and I received the partner's encrypted ciphertext file `message-12307888.enc`.
 
-My encrypted ciphertext file was:
+![Partner Key and IV](images/week4-task2-partner-key-iv.png)
 
-`message-12314173.enc`
+*Figure 5: AES key and IV shared by Student ID 12307888 for the AES-256-CBC decryption exercise.*
 
-The ciphertext I received from Student ID 12307888 was:
-
-`message-12307888.enc`
-
-### Decrypting the Received Ciphertext
+### Decryption
 I used AES-256-CBC with the corresponding key and IV to decrypt the ciphertext received from Student ID 12307888.
 
 ![AES Decryption](images/week4-task2-aes-decryption.png)
 
-*Figure 5: Decrypting `message-12307888.enc` received from Student ID 12307888 using AES-256-CBC.*
+*Figure 6: AES-256-CBC decryption of the ciphertext received from Student ID 12307888.*
 
 ### VirtualBox Port Forwarding
-To transfer files between the host computer and virtual machine, I configured VirtualBox port forwarding. The host IP was `127.0.0.1`, host port was `2222`, and the connection was forwarded to guest port `22`.
+I configured VirtualBox port forwarding so that the Debian virtual machine could be accessed from the host computer. Host IP `127.0.0.1` and host port `2222` were forwarded to guest port `22`.
 
 ![Port Forwarding](images/week4-task2-port-forwarding.png)
 
-*Figure 6: VirtualBox port forwarding configuration for SSH/SFTP file transfer.*
+*Figure 7: VirtualBox port forwarding configuration for SSH/SFTP access.*
 
-### File Transfer Using FileZilla
-I configured FileZilla to connect to the virtual machine using SFTP. The connection used host `127.0.0.1`, port `2222`, and the `vagrant` user.
+### File Transfer with FileZilla
+I used FileZilla with SFTP to access the Debian virtual machine. The connection used host `127.0.0.1`, port `2222`, and the `vagrant` account.
 
 ![FileZilla](images/week4-task2-filezilla.png)
 
-*Figure 7: FileZilla SFTP configuration used to access and transfer files from the virtual machine.*
+*Figure 8: FileZilla SFTP configuration used to access files on the Debian virtual machine.*
 
-### Discussion – Sharing the Key and IV
-Sharing the secret key and IV directly with another student was convenient for this practical because both students could use the same values for encryption and decryption. However, sharing a secret key through an insecure method is not secure because anyone who obtains the key could use it to decrypt the ciphertext. A secure communication method should therefore be used when exchanging secret keys.
+### Discussion
+Sharing the secret key and IV directly with another student was convenient for this practical because both sides could use the required values for encryption and decryption. However, directly sharing a secret key is not secure if the communication method can be intercepted. If an attacker obtains the secret key, the encrypted message could be decrypted. Therefore, secret keys should be exchanged using a secure method.
 
+### Result
+I successfully generated an AES key and IV, created a plaintext message, produced the encrypted `message-12314173.enc` file using AES-256-CBC, exchanged the required information with Student ID 12307888, and completed the decryption exercise. FileZilla and VirtualBox port forwarding were also used for file transfer.
 ### Result
 I successfully generated an AES key and IV, created and encrypted my plaintext message using AES-256-CBC, exchanged ciphertext with Student ID 12307888, and performed the decryption exercise. I also configured VirtualBox port forwarding and FileZilla for transferring files between the virtual machine and host computer.
