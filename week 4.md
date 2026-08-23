@@ -113,7 +113,11 @@ Decryptions per second = 1,418,673,080 / 16
 
 Therefore, my computer can perform approximately **88.67 million AES-256-CBC decryptions per second** for a 16-byte block.
 
+📁 [Download/View My Encrypted Message – message-12314173.enc](images/message-12314173.enc)
+📁 [Download/View Partner Encrypted Message – message-12307888.enc](images/message-12307888.enc)
+
 ## Outcomes
 
 In Week 4, I used OpenSSL to explore cryptographic operations, performed AES-256-CBC encryption and decryption using a shared secret key and IV, exchanged encrypted data with another student, and successfully recovered the received plaintext. I also configured VirtualBox port forwarding and FileZilla for transferring files between the Debian virtual machine and host computer. Finally, I measured AES-256-CBC performance using OpenSSL and used the measured result to examine the practical difficulty of brute-forcing an AES-256 key.
+
 
