@@ -10,22 +10,38 @@ I used the MS2 virtual machine with the IP address:
 
 `192.168.56.35`
 
-I created MS2 as a target in Greenbone and created a scan task named **MS2 Scan**. The scan used the **OpenVAS Default** scanner with the **Full and fast** scan configuration.
+The Greenbone virtual machine was configured and the Greenbone web interface was accessed successfully.
 
-![MS2 Target](images/Week3-Task1-MS2-Target.png)
+![Greenbone Dashboard](images/week3-task1-greenbone-dashboard.png)
+
+I created MS2 as a target in Greenbone using the IP address `192.168.56.35`.
+
+![MS2 Target](images/week3-task1-ms2-target.png)
+
+I then created a scan task named **MS2 Scan**. The scan used the **OpenVAS Default** scanner with the **Full and fast** scan configuration.
+
+![MS2 Scan Task](images/week3-task1-scan-task.png)
 
 ### Result
 The vulnerability scan completed successfully and reported a maximum severity of **10.0 (High)**.
 
-![MS2 Scan Complete](images/Week3-Task1-MS2-Scan-Complete.png)
+![MS2 Scan Completed](images/week3-task1-scan-completed.png)
+
+The scan report showed the completed scan information and results.
+
+![MS2 Report Summary](images/week3-task1-ms2-report-summary.png)
 
 The scan identified multiple High, Medium and Low severity vulnerabilities.
 
-![Vulnerability Results](images/Week3-Task1-Vulnerability-Results.png)
+![MS2 Vulnerability Results](images/week3-task1-ms2-vulnerability-results.png)
 
-I examined the **Distributed Ruby (dRuby/DRb) Multiple RCE Vulnerabilities**, which had a severity of **10.0 (High)**. I also reviewed the impact and mitigation information provided in the Greenbone report.
+I examined the **Distributed Ruby (dRuby/DRb) Multiple RCE Vulnerabilities**, which had a severity of **10.0 (High)**.
 
-![dRuby Vulnerability Details](images/Week3-Task1-dRuby-Vulnerability-Details.png)
+![dRuby Vulnerability](images/week3-task1-ms2-druby-vulnerability.png)
+
+I also reviewed the impact and mitigation information provided in the Greenbone report.
+
+![dRuby Impact and Solution](images/week3-task1-ms2-druby-impact-solution.png)
 
 
 ## Task 2 – SQL Injection
@@ -35,6 +51,8 @@ The objective of this task was to demonstrate an SQL injection vulnerability usi
 
 ### Procedure
 I started the MS2 virtual machine and accessed DVWA. After logging in, I changed the **DVWA Security** level to **Low**.
+
+![DVWA Security Low](images/Week3-Task2-DVWA-Security-Low.png)
 
 I opened the **SQL Injection** page and entered:
 
