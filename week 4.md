@@ -95,7 +95,7 @@ Command used:
 
 `openssl speed aes-256-cbc`
 
-For the smallest block size of 16 bytes, OpenSSL reported approximately **223,850.23k bytes per second**, which is approximately **223,850,230 bytes per second**.
+For the smallest block size of 16 bytes, OpenSSL reported approximately 1,418,673.08k bytes per second, which is approximately 1,418,673,080 bytes per second.
 
 ![AES Speed Test](images/week4-task3-aes-speed-test.png)
 
