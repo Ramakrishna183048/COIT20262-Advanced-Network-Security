@@ -113,7 +113,7 @@ Decryptions per second = 1,418,673,080 / 16
 
 Therefore, my computer can perform approximately **88.67 million AES-256-CBC decryptions per second** for a 16-byte block.
 
-📁 [Download/View My Encrypted Message – message-12314173.enc](images/message-12314173.enc)
+📁 [Download/View My Encrypted Message – message-12314173.enc](images/message-12314173.enc) 
 📁 [Download/View Partner Encrypted Message – message-12307888.enc](images/message-12307888.enc)
 
 ## Outcomes
