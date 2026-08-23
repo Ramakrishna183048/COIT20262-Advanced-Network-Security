@@ -10,6 +10,24 @@ I used the MS2 virtual machine with the IP address:
 
 `192.168.56.35`
 
+### Network Configuration
+
+Before performing the vulnerability scan, I checked the Greenbone network interfaces using:
+
+`ip a`
+
+The Greenbone VM had the following IP addresses:
+
+- **eth0:** `10.0.2.15/24`
+- **eth1:** `192.168.56.20/24`
+- **eth2:** `192.168.0.120/24`
+
+For communication with the MS2 virtual machine, I used the `192.168.56.0/24` network. Greenbone used **eth1 (`192.168.56.20`)**, while the MS2 target had the IP address **`192.168.56.35`**.
+
+![Greenbone IP Configuration](images/ipadder.png)
+
+*Figure: Greenbone network interfaces showing the configured IP addresses.*
+
 The Greenbone virtual machine was configured and the Greenbone web interface was accessed successfully.
 
 ![Greenbone Dashboard](images/week3-task1-greenbone-dashboard.png)
