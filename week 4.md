@@ -83,6 +83,4 @@ I used FileZilla with SFTP to access the Debian virtual machine. The connection 
 Sharing the secret key and IV directly with another student was convenient for this practical because both sides could use the required values for encryption and decryption. However, directly sharing a secret key is not secure if the communication method can be intercepted. If an attacker obtains the secret key, the encrypted message could be decrypted. Therefore, secret keys should be exchanged using a secure method.
 
 ### Result
-I successfully generated an AES key and IV, created a plaintext message, produced the encrypted `message-12314173.enc` file using AES-256-CBC, exchanged the required information with Student ID 12307888, and completed the decryption exercise. FileZilla and VirtualBox port forwarding were also used for file transfer.
-### Result
 I successfully generated an AES key and IV, created and encrypted my plaintext message using AES-256-CBC, exchanged ciphertext with Student ID 12307888, and performed the decryption exercise. I also configured VirtualBox port forwarding and FileZilla for transferring files between the virtual machine and host computer.
