@@ -84,3 +84,36 @@ Sharing the secret key and IV directly with another student was convenient for t
 
 ### Result
 I successfully generated an AES key and IV, created and encrypted my plaintext message using AES-256-CBC, exchanged ciphertext with Student ID 12307888, and performed the decryption exercise. I also configured VirtualBox port forwarding and FileZilla for transferring files between the virtual machine and host computer.
+
+## Task 3 - Brute Force with AES
+
+### AES-256-CBC Speed Test
+
+I performed an AES-256-CBC speed test using OpenSSL to measure the encryption/decryption performance of the virtual machine.
+
+Command used:
+
+`openssl speed aes-256-cbc`
+
+For the smallest block size of 16 bytes, OpenSSL reported approximately **223,850.23k bytes per second**, which is approximately **223,850,230 bytes per second**.
+
+![AES Speed Test](images/week4-task3-aes-speed-test.png)
+
+*Figure 9: OpenSSL AES-256-CBC speed test showing the performance for different block sizes.*
+
+### Approximate Decryptions per Second
+
+For a 16-byte block, the measured AES-256-CBC throughput was approximately **1,418,673.08k bytes per second**, which is **1,418,673,080 bytes per second**.
+
+Therefore:
+
+Decryptions per second = 1,418,673,080 / 16
+
+= **88,667,067.5 decryptions per second**
+
+Therefore, my computer can perform approximately **88.67 million AES-256-CBC decryptions per second** for a 16-byte block.
+
+## Outcomes
+
+In Week 4, I used OpenSSL to explore cryptographic operations, performed AES-256-CBC encryption and decryption using a shared secret key and IV, exchanged encrypted data with another student, and successfully recovered the received plaintext. I also configured VirtualBox port forwarding and FileZilla for transferring files between the Debian virtual machine and host computer. Finally, I measured AES-256-CBC performance using OpenSSL and used the measured result to examine the practical difficulty of brute-forcing an AES-256 key.
+
