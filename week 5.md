@@ -37,11 +37,6 @@ I understood how public and private keys are used for confidentiality and how di
 
 The objective of this task was to use OpenSSL to generate and examine a 2048-bit RSA public/private key pair, share the public key, create a digital signature using RSA and SHA-256, and verify a message and signature received from another student.
 
-----
-
-## Task 2 – Public Key Cryptography with RSA
-----
-
 ### RSA 2048-bit Key Pair Generation
 
 I used OpenSSL in Kali Linux to generate a 2048-bit RSA private key.
