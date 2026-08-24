@@ -135,33 +135,6 @@ This confirmed that the digital signature was valid for `message.txt`.
 
 *Figure 5: Successful verification of my RSA/SHA-256 digital signature for message.txt.*
 
-### RSA Digital Signature
-
-I created a digital signature for my message file, `message.txt`, using my RSA private key and SHA-256.
-
-The message and signature files used in this activity were:
-
-- `message.txt` – my plaintext message.
-- `signature.bin` – the RSA/SHA-256 digital signature.
-
-The private key (`private.pem`) was used to create the signature and was kept secret.
-
-I verified that the existing `signature.bin` corresponded to `message.txt` using my public key.
-
-Command used for verification:
-
-`openssl dgst -sha256 -verify public.pem -signature signature.bin message.txt`
-
-The result was:
-
-`Verified OK`
-
-This confirmed that the digital signature was valid for `message.txt`.
-
-![RSA Signature Verification](images/week5-task2-signature-verification.png)
-
-*Figure 5: Successful verification of my RSA/SHA-256 digital signature for message.txt.*
-
 ### Partner Message and Signature Verification
 
 I received a message and digital signature from Student ID **12307888**. I used the partner's RSA public key to verify the signature.
