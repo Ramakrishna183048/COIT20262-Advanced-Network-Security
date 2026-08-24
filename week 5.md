@@ -35,13 +35,13 @@ I understood how public and private keys are used for confidentiality and how di
 
 ### Objective
 
-The objective of this task was to use OpenSSL to generate and examine a 2048-bit RSA public/private key pair, share the public key, create a digital signature using RSA and SHA-256, and verify a message and signature received from another student.
+The objective of this task was to use OpenSSL in Kali Linux to generate and examine a 2048-bit RSA key pair, identify the RSA public exponent and modulus size, share the public key, create a digital signature using RSA and SHA-256, and verify a message and signature received from another student.
 
 ### RSA 2048-bit Key Pair Generation
 
 I used OpenSSL in Kali Linux to generate a 2048-bit RSA private key.
 
-The following command was used:
+Command used:
 
 `openssl genrsa -out private.pem 2048`
 
@@ -49,96 +49,157 @@ I then extracted the public key from the private key using:
 
 `openssl rsa -in private.pem -pubout -out public.pem`
 
-This created two files:
+This created two RSA key files:
 
-- `private.pem` – contains the private RSA key and must be kept secret.
-- `public.pem` – contains only the public RSA key and can be shared with other users.
+- `private.pem` – contains the private key and must be kept secret.
+- `public.pem` – contains the public key and can be shared with others.
 
-![RSA Key Generation](images/Screenshot%202026-08-12%20103859.png)
+![RSA Key Generation](images/week5-task2-rsa-key-generation.png)
 
-*Figure 1: Generation of my 2048-bit RSA key pair and creation of the public key file.*
+*Figure 1: Generation of the 2048-bit RSA private key and extraction of the public key using OpenSSL.*
 
 ### RSA Public Exponent
 
-I examined the RSA private key parameters using:
+I examined the generated RSA private key using OpenSSL.
+
+Command used:
 
 `openssl rsa -in private.pem -text -noout`
 
-The output showed that the RSA key size was **2048 bits** and the public exponent was:
+The output showed the public exponent as:
 
-**e = 65537 (0x10001)**
+`publicExponent: 65537 (0x10001)`
 
-![RSA Private Key Information](images/PRIVATE%20KEY%20.png)
+Therefore, the public exponent **e = 65537**.
 
-*Figure 2: RSA key information showing the 2048-bit key and public exponent of 65537.*
+![RSA Public Exponent](images/week5-task2-public-exponent.png)
+
+*Figure 2: RSA key details showing the public exponent value of 65537.*
 
 ### RSA Public Modulus
 
-I displayed the RSA modulus using:
+I displayed the RSA public modulus using OpenSSL.
+
+Command used:
 
 `openssl rsa -in private.pem -noout -modulus`
 
-My RSA key is 2048 bits long. Therefore, the public modulus is:
+The generated RSA key has a size of **2048 bits**. Therefore, the size of the public modulus in bytes is:
 
-**2048 / 8 = 256 bytes**
+2048 / 8 = **256 bytes**
 
-Hence, the public modulus `n` is **256 bytes**.
+Therefore, the RSA public modulus **n is 256 bytes** in size.
 
-![RSA Modulus](images/Screenshot%202026-08-12%20103959.png)
+![RSA Public Modulus](images/week5-task2-public-modulus.png)
 
-*Figure 3: RSA modulus displayed using OpenSSL.*
-
-### Public Key File
-
-The `public.pem` file contains only my RSA public key. I displayed the file to confirm its contents.
-
-![Public Key](images/PUBLIC.png)
-
-*Figure 4: RSA public key stored in the public.pem file.*
+*Figure 3: RSA public modulus displayed using OpenSSL.*
 
 ### Uploading the Public Key
 
-I uploaded my public key to the Moodle Public Key Directory so that other students could obtain the public key without receiving my private key.
+I uploaded my RSA public key to the Moodle Public Key Directory so that other students could obtain my public key for the message-signing and verification activity.
 
-My uploaded entry contains:
+The uploaded public key file was:
 
-- Student ID: **12314173**
-- Public key: `12314173-pubkey.pem`
+`12314173-pubkey.pem`
 
-![My Public Key Upload](images/week5-task2-my-public-key-upload.png)
+Only the **public key** was uploaded. My RSA private key (`private.pem`) was not shared and was kept secret.
 
-*Figure 5: My RSA public key uploaded to the Moodle Public Key Directory.*
+![Public Key Upload](images/week5-task2-my-public-key-upload.png)
 
-I also obtained the public key belonging to Student ID **12307888** from the Public Key Directory for the partner activity.
+*Figure 4: My RSA public key uploaded to the Moodle Public Key Directory.*
 
-![Partner Public Key](images/week5-task2-partner-public-key.png)
+### RSA Digital Signature
 
-*Figure 6: Public key of Student ID 12307888 available in the Moodle Public Key Directory.*
+I created a digital signature for my message file, `message.txt`, using my RSA private key and SHA-256.
 
-### Message Creation
+The message and signature files used in this activity were:
 
-I created a plaintext message file named:
+- `message.txt` – my plaintext message.
+- `signature.bin` – the RSA/SHA-256 digital signature.
 
-`message-12314173.txt`
+The private key (`private.pem`) was used to create the signature and was kept secret.
 
-This message file was prepared for the RSA digital signature activity.
+I verified that the existing `signature.bin` corresponded to `message.txt` using my public key.
 
-![Message Creation](images/FILE%20CREATED.png)
+Command used for verification:
 
-*Figure 7: Creation of message-12314173.txt for the digital signature activity.*
+`openssl dgst -sha256 -verify public.pem -signature signature.bin message.txt`
 
-### Private Key Security
+The result was:
 
-The RSA private key must remain confidential because it is used to perform operations such as creating my digital signature. I did not share or upload my `private.pem` file to the Public Key Directory. Only my public key was shared.
+`Verified OK`
 
-The private key should be stored securely and access should be restricted to its owner. If another person obtained the private key, they could potentially create signatures that appear to have been generated by the legitimate owner.
+This confirmed that the digital signature was valid for `message.txt`.
+
+![RSA Signature Verification](images/week5-task2-signature-verification.png)
+
+*Figure 5: Successful verification of my RSA/SHA-256 digital signature for message.txt.*
+
+### RSA Digital Signature
+
+I created a digital signature for my message file, `message.txt`, using my RSA private key and SHA-256.
+
+The message and signature files used in this activity were:
+
+- `message.txt` – my plaintext message.
+- `signature.bin` – the RSA/SHA-256 digital signature.
+
+The private key (`private.pem`) was used to create the signature and was kept secret.
+
+I verified that the existing `signature.bin` corresponded to `message.txt` using my public key.
+
+Command used for verification:
+
+`openssl dgst -sha256 -verify public.pem -signature signature.bin message.txt`
+
+The result was:
+
+`Verified OK`
+
+This confirmed that the digital signature was valid for `message.txt`.
+
+![RSA Signature Verification](images/week5-task2-signature-verification.png)
+
+*Figure 5: Successful verification of my RSA/SHA-256 digital signature for message.txt.*
+
+### Partner Message and Signature Verification
+
+I received a message and digital signature from Student ID **12307888**. I used the partner's RSA public key to verify the signature.
+
+The files used were:
+
+- `7888message.txt` – message received from my partner.
+- `7888signature.bin` – digital signature received from my partner.
+- `7888-public.pem` – partner's RSA public key.
+
+I verified the signature using OpenSSL with SHA-256.
+
+Command used:
+
+`openssl dgst -sha256 -verify 7888-public.pem -signature 7888signature.bin 7888message.txt`
+
+The verification result was:
+
+`Verified OK`
+
+This confirmed that the digital signature was valid for the received message using Student ID 12307888's public key.
+
+![Partner Signature Verification](images/week5-task2-partner-verification.png)
+
+*Figure 6: Successful RSA/SHA-256 verification of the message and digital signature received from Student ID 12307888.*
 
 ### Security and Convenience of Sharing Public Keys
 
-Sharing a public key is convenient because the public key is designed to be distributed and does not need to be kept secret. In this activity, the Moodle Public Key Directory provided a convenient location for obtaining another student's public key.
+Public keys are convenient to share because they do not need to be kept secret. In this activity, the Moodle Public Key Directory provided a convenient way to share and obtain public keys between students.
 
-However, the authenticity of a public key is important. If an incorrect or malicious public key was substituted for the intended person's key, communications or signature verification could be affected. Therefore, the identity associated with a public key should be verified through a trusted method.
+However, it is important to make sure that a public key actually belongs to the person it claims to belong to. If an attacker replaced a legitimate public key with their own key, the security of the communication could be affected. Therefore, public keys should be obtained from a trusted source and their ownership should be verified when necessary.
 
-### Current Result
+The private key must always remain confidential. I did not share my `private.pem` file with my partner or upload it to the Public Key Directory. I only shared information that was intended to be public.
 
-I successfully generated a 2048-bit RSA key pair, identified the public exponent as **65537**, determined that the 2048-bit modulus is **256 bytes**, extracted my public key and uploaded the public key to the Moodle Public Key Directory. I also obtained my partner's public key and created the message file required for the digital signature activity.
+### Result
+
+I successfully generated a 2048-bit RSA key pair using OpenSSL and identified the public exponent as **65537** and the modulus size as **256 bytes**. I uploaded only my public key to the Moodle Public Key Directory while keeping my private key confidential.
+
+I used RSA with SHA-256 for the digital signature activity and confirmed that my `signature.bin` was valid for `message.txt`. I exchanged the required message and signature files with Student ID **12307888** and successfully verified my partner's digital signature using `7888-public.pem`. The verification returned **`Verified OK`**.
+
+This activity demonstrated how RSA public and private keys can be used for digital signatures, message authentication and integrity verification while keeping the private key secret.
