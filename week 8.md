@@ -2,10 +2,7 @@
 # Week 8 – Access Control and File Permissions
 
 ## Overview
-
-In Week 8, I worked with Linux access control and file permissions.
-
-The tutorial focused on:
+In this week tutorial focused on:
 
 - creating and examining file permissions
 - modifying permissions using `chmod`
@@ -24,7 +21,7 @@ The practical activities helped me understand how Linux implements discretionary
 
 The objective of this task was to create an example file, inspect its permissions, and modify the permissions so that group users could write to the file while other users had no access.
 
-The tutorial required the use of `ls -l` and `chmod` to examine and modify file permissions. :contentReference[oaicite:0]{index=0}
+The tutorial required the use of `ls -l` and `chmod` to examine and modify file permissions. 
 
 ---
 
@@ -96,7 +93,7 @@ This task demonstrated how symbolic permission changes such as `g+w` and `o-rwx`
 
 The objective of this task was to apply Linux file permissions to implement an access-control policy using multiple users, directories and files.
 
-The tutorial required the use of user-management commands together with file permissions to implement the policy. :contentReference[oaicite:1]{index=1}
+The tutorial required the use of user-management commands together with file permissions to implement the policy. 
 
 ---
 
