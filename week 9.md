@@ -2,41 +2,22 @@
 
 ## Overview
 
-In Week 9, I worked with digital certificates, Certificate Authorities (CAs), HTTPS and Apache web-server security.
+In Week 9, I worked with digital certificates, Certificate Authorities (CAs), HTTPS, and Apache web-server security.
 
-The tutorial consisted of two main tasks:
+The tutorial included two main tasks:
 
-- analysing digital certificates and trusted root certificates
-- deploying a secure HTTPS web server in virtnet
+- analysing trusted root certificates and website certificates
+- deploying a secure HTTPS web server using a custom Certificate Authority
 
-The practical work helped me understand how certificate trust works, how a Certificate Authority signs a server certificate, how Apache is configured for HTTPS, and how a client verifies a server certificate.
+The activities helped me understand how certificate trust works, how a CA signs certificates, and how HTTPS is configured and verified.
 
 ---
 
 # Task 1 – Analyse Digital Certificates
 
-## Objective
-
-The objective of this task was to examine trusted root certificates stored by the browser/operating system and analyse a certificate used by a real HTTPS website.
-
-I inspected:
-
-- a trusted root CA certificate
-- a website certificate
-- certificate issuer information
-- validity periods
-- SHA-256 fingerprints
-- certificate trust relationships
-
----
-
 ## Root Certificate Analysis
 
-I opened the certificate manager in Chrome and examined a trusted root certificate.
-
-The root certificate selected was:
-
-`Amazon Root CA 1`
+I opened the browser certificate manager and examined the trusted root certificate **Amazon Root CA 1**.
 
 The certificate showed:
 
@@ -44,51 +25,52 @@ The certificate showed:
 - Organisation: Amazon
 - Issued To: Amazon Root CA 1
 - Issued By: Amazon Root CA 1
-- certificate validity period
+- validity period
 - SHA-256 certificate fingerprint
 - SHA-256 public-key fingerprint
 
-Because the **Issued To** and **Issued By** fields were the same, the certificate was self-signed. This is expected for a root Certificate Authority.
+Because the **Issued To** and **Issued By** fields are the same, this is a self-signed root certificate.
+
+![Amazon Root CA 1](images/week9-task1-root-certificate.png)
+
+*Figure 1: Amazon Root CA 1 trusted root certificate details.*
 
 ---
 
 ## Website Certificate Analysis
 
-I then inspected the HTTPS certificate for:
+I inspected the HTTPS certificate for:
 
 `www.cqu.edu.au`
 
-The certificate showed that:
+The certificate showed:
 
-- the certificate was issued to `www.cqu.edu.au`
-- the issuer was `WE1`
-- the issuer organisation was Google Trust Services
-- the certificate had a defined validity period
-- SHA-256 fingerprints were provided
+- Common Name: `www.cqu.edu.au`
+- Issuer: `WE1`
+- Issuer Organisation: Google Trust Services
+- validity period
+- SHA-256 certificate fingerprint
+- SHA-256 public-key fingerprint
 
-Unlike the root certificate, the website certificate was not self-signed because its issuer was different from the website identity.
+Unlike the root certificate, this website certificate is not self-signed because the **Issued To** and **Issued By** fields are different.
 
-This demonstrates how a website certificate is validated through a chain of trust that ultimately leads to a trusted root CA.
+This demonstrates how an HTTPS website certificate is issued by a Certificate Authority and validated through a chain of trust.
+
+![CQU Website Certificate](images/week9-task1-website-certificate.png)
+
+*Figure 2: HTTPS certificate details for www.cqu.edu.au.*
 
 ---
 
 ## Discussion – Trust in Certificate Authorities
 
-Root Certificate Authorities are trusted because their root certificates are included in the trusted certificate stores used by browsers and operating systems.
+Root certificates are trusted because they are stored in the trusted certificate stores maintained by browsers and operating systems.
 
-However, this trust is not absolute.
+However, trust in a Certificate Authority is not absolute. If a trusted CA is compromised or incorrectly issues a certificate, an attacker may obtain a certificate that clients accept as valid.
 
-If a trusted CA is compromised or incorrectly issues a certificate, an attacker could potentially obtain a certificate that browsers accept as valid.
+For this reason, browsers and operating systems maintain trusted root stores and may remove or distrust CAs that fail to meet required security standards.
 
-For this reason, operating systems and browsers:
-
-- maintain trusted root certificate stores
-- remove or distrust problematic CAs
-- check certificate validity
-- verify certificate chains
-- use certificate revocation mechanisms where supported
-
-Therefore, the security of HTTPS depends not only on encryption but also on the reliability and security practices of Certificate Authorities.
+Therefore, I would not assume that every Certificate Authority is equally trustworthy. Trust depends on the CA's security practices, auditing, operational controls, and reputation.
 
 ---
 
